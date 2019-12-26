@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,14 @@
                                     <constraint firstAttribute="height" constant="100" id="osD-l9-pBJ"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="20R-Ic-sc6">
+                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Xde-BS-rbM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FlL-Ly-05o"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -40,10 +48,17 @@
                             <constraint firstItem="WL5-Pw-GlE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9cv-me-wAK"/>
                             <constraint firstItem="WL5-Pw-GlE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VER-G2-gDn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="seL-8X-Wn2" secondAttribute="top" constant="-10" id="X6h-KE-2xO"/>
+                            <constraint firstItem="20R-Ic-sc6" firstAttribute="top" secondItem="WL5-Pw-GlE" secondAttribute="bottom" id="apD-XA-14Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="20R-Ic-sc6" secondAttribute="trailing" id="iVs-ob-S3S"/>
+                            <constraint firstAttribute="bottom" secondItem="20R-Ic-sc6" secondAttribute="bottom" id="md0-03-0sY"/>
+                            <constraint firstItem="20R-Ic-sc6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oK2-MM-Wv6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="It3-Mu-k5D"/>
+                    <connections>
+                        <outlet property="tableView" destination="20R-Ic-sc6" id="Qyy-vN-Jm1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
