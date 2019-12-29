@@ -10,10 +10,20 @@ import Foundation
 
 class MainScreenViewModel {
 
-    func fetchData(completion: (() -> Void)?) {
-        RequestHandler.request { (dataSource, error) in
-            if error != nil {
-                print(dataSource)
+    var dataModel:  MainScreenDataModel?
+    func fetchData(completion: ((MainScreenDataModel?) -> Void)?) {
+        RequestHandler.request { [weak self] (dataSource, error) in
+            guard let self = self else {return}
+            if error == nil {
+                var characters = [Character]()
+                dataSource?.data.results.forEach({ (result) in
+                    characters.append(Character(id: result.id,
+                                                name: result.name,
+                                                modified: result.modified,
+                                                thumbnail: result.thumbnail))
+                })
+                self.dataModel = MainScreenDataModel(character: characters)
+                completion?(self.dataModel)
             }
         }
     }

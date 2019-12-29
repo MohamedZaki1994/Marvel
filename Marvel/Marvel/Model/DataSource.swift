@@ -21,9 +21,9 @@ class DataSource: Codable {
 // MARK: - DataClass
 class DataClass: Codable {
     let offset, limit, total, count: Int
-    let results: [Character]
+    let results: [Result]
 
-    init(offset: Int, limit: Int, total: Int, count: Int, results: [Character]) {
+    init(offset: Int, limit: Int, total: Int, count: Int, results: [Result]) {
         self.offset = offset
         self.limit = limit
         self.total = total
@@ -33,7 +33,7 @@ class DataClass: Codable {
 }
 
 // MARK: - Result
-class Character: Codable {
+class Result: Codable {
     let id: Int
     let name, resultDescription: String
     let modified: String

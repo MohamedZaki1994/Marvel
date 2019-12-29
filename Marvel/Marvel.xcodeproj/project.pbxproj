@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3526A04D23B8985C00FF446E /* MainScreenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526A04C23B8985C00FF446E /* MainScreenDataModel.swift */; };
 		35278D2523B3548200B07013 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35278D2423B3548200B07013 /* String.swift */; };
 		35278D2923B355F200B07013 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35278D2823B355F200B07013 /* Constants.swift */; };
 		3531B1DD23B4B5B700495AE8 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531B1DC23B4B5B700495AE8 /* RequestHandler.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3526A04C23B8985C00FF446E /* MainScreenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDataModel.swift; sourceTree = "<group>"; };
 		35278D2423B3548200B07013 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		35278D2823B355F200B07013 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3531B1DC23B4B5B700495AE8 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				35580E9D23B4FC0300B2BA54 /* MainScreenViewModel.swift */,
 				35580E9923B4ECF500B2BA54 /* MainTableViewCell.swift */,
 				35580E9A23B4ECF500B2BA54 /* MainTableViewCell.xib */,
+				3526A04C23B8985C00FF446E /* MainScreenDataModel.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3526A04D23B8985C00FF446E /* MainScreenDataModel.swift in Sources */,
 				35278D2923B355F200B07013 /* Constants.swift in Sources */,
 				3531B1E023B4B62900495AE8 /* DataSource.swift in Sources */,
 				35580E9B23B4ECF500B2BA54 /* MainTableViewCell.swift in Sources */,

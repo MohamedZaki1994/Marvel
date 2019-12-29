@@ -19,6 +19,7 @@ class MainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         carrierView.maskCorners(inset: 15)
     }
+
 }
 
 extension UIView {
