@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainTableViewCell: UITableViewCell {
 
@@ -18,6 +19,11 @@ class MainTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         carrierView.maskCorners(inset: 15)
+    }
+
+    func config(url: URL?) {
+        guard let urlPath = url else {return}
+        heroImageView.kf.setImage(with: urlPath)
     }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SDWebImage
 
 class MainScreenViewModel {
 
@@ -27,5 +28,4 @@ class MainScreenViewModel {
             }
         }
     }
-
 }
