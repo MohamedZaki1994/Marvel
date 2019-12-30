@@ -11,9 +11,13 @@ import SDWebImage
 
 class MainScreenViewModel {
 
-    var dataModel:  MainScreenDataModel?
+    var dataModel = MainScreenDataModel(character: [])
+    var offset = 0
     func fetchData(completion: ((MainScreenDataModel?) -> Void)?) {
-        RequestHandler.request { [weak self] (dataSource, error) in
+        if offset == 10  {
+            return
+        }
+        RequestHandler.request(offset: offset) { [weak self] (dataSource, error) in
             guard let self = self else {return}
             if error == nil {
                 var characters = [Character]()
@@ -23,9 +27,13 @@ class MainScreenViewModel {
                                                 modified: result.modified,
                                                 thumbnail: result.thumbnail))
                 })
-                self.dataModel = MainScreenDataModel(character: characters)
+                self.dataModel.character?.append(contentsOf: characters)
+//                self.dataModel = MainScreenDataModel(character: characters)
                 completion?(self.dataModel)
             }
+        }
+        if offset < 10 {
+            offset += 1
         }
     }
 }

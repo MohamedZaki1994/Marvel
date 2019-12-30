@@ -25,17 +25,26 @@
                                             <constraint firstAttribute="width" constant="150" id="U87-PH-iwf"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S0-5b-OkA">
+                                        <rect key="frame" x="369" y="98" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="10n-tq-bPX"/>
+                                            <constraint firstAttribute="height" constant="30" id="7dZ-Gg-p6T"/>
+                                        </constraints>
+                                        <state key="normal" image="icn-nav-search"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="seL-8X-Wn2" firstAttribute="centerX" secondItem="WL5-Pw-GlE" secondAttribute="centerX" id="3Hx-F2-Nqh"/>
+                                    <constraint firstAttribute="trailing" secondItem="0S0-5b-OkA" secondAttribute="trailing" constant="15" id="LYa-r0-ZV1"/>
                                     <constraint firstAttribute="bottom" secondItem="seL-8X-Wn2" secondAttribute="bottom" constant="10" id="NGm-Ux-0lH"/>
                                     <constraint firstAttribute="height" constant="100" id="osD-l9-pBJ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="20R-Ic-sc6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="20R-Ic-sc6">
                                 <rect key="frame" x="0.0" y="100" width="414" height="796"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Xde-BS-rbM"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="FlL-Ly-05o"/>
@@ -44,13 +53,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="20R-Ic-sc6" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="0Ii-Hq-wPO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WL5-Pw-GlE" secondAttribute="trailing" id="6Mi-Hg-atK"/>
                             <constraint firstItem="WL5-Pw-GlE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9cv-me-wAK"/>
                             <constraint firstItem="WL5-Pw-GlE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VER-G2-gDn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="seL-8X-Wn2" secondAttribute="top" constant="-10" id="X6h-KE-2xO"/>
                             <constraint firstItem="20R-Ic-sc6" firstAttribute="top" secondItem="WL5-Pw-GlE" secondAttribute="bottom" id="apD-XA-14Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="0S0-5b-OkA" secondAttribute="top" constant="-10" id="hkn-pn-uZ8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="20R-Ic-sc6" secondAttribute="trailing" id="iVs-ob-S3S"/>
-                            <constraint firstAttribute="bottom" secondItem="20R-Ic-sc6" secondAttribute="bottom" id="md0-03-0sY"/>
                             <constraint firstItem="20R-Ic-sc6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oK2-MM-Wv6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -85,5 +95,6 @@
     </scenes>
     <resources>
         <image name="icn-nav-marvel" width="62" height="28"/>
+        <image name="icn-nav-search" width="28" height="28"/>
     </resources>
 </document>
