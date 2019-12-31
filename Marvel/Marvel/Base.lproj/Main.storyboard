@@ -74,6 +74,50 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="136.60714285714286"/>
         </scene>
+        <!--Detailed View Controller-->
+        <scene sceneID="Qak-Me-uOf">
+            <objects>
+                <viewController storyboardIdentifier="DetailedViewController" id="QqF-8M-jCY" customClass="DetailedViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a5X-la-JsI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxb-h8-0tn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="8Ak-7W-i1S"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzC-bF-iZw">
+                                <rect key="frame" x="10" y="69" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="4T9-JB-11n"/>
+                                    <constraint firstAttribute="height" constant="28" id="Ajg-DB-Fb4"/>
+                                </constraints>
+                                <state key="normal" image="icn-nav-back-white"/>
+                                <connections>
+                                    <action selector="backButton:" destination="QqF-8M-jCY" eventType="touchUpInside" id="izr-yw-QWh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yzC-bF-iZw" firstAttribute="top" secondItem="IrT-ph-GNJ" secondAttribute="top" constant="25" id="IkJ-xc-r5a"/>
+                            <constraint firstItem="xxb-h8-0tn" firstAttribute="top" secondItem="a5X-la-JsI" secondAttribute="top" id="QPd-gW-21H"/>
+                            <constraint firstItem="yzC-bF-iZw" firstAttribute="leading" secondItem="IrT-ph-GNJ" secondAttribute="leading" constant="10" id="UYH-kB-6Qe"/>
+                            <constraint firstItem="xxb-h8-0tn" firstAttribute="leading" secondItem="IrT-ph-GNJ" secondAttribute="leading" id="kzb-jT-Krh"/>
+                            <constraint firstItem="IrT-ph-GNJ" firstAttribute="trailing" secondItem="xxb-h8-0tn" secondAttribute="trailing" id="owS-38-G3e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IrT-ph-GNJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="xxb-h8-0tn" id="SCX-wu-nSt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4O-dB-bz4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865" y="173"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gSN-kK-SAO">
             <objects>
@@ -94,6 +138,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icn-nav-back-white" width="28" height="28"/>
         <image name="icn-nav-marvel" width="62" height="28"/>
         <image name="icn-nav-search" width="28" height="28"/>
     </resources>

@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3526A04D23B8985C00FF446E /* MainScreenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526A04C23B8985C00FF446E /* MainScreenDataModel.swift */; };
 		35278D2523B3548200B07013 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35278D2423B3548200B07013 /* String.swift */; };
 		35278D2923B355F200B07013 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35278D2823B355F200B07013 /* Constants.swift */; };
+		3527E0E723BB5D60001EC2CE /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527E0E623BB5D60001EC2CE /* DetailedViewController.swift */; };
+		3527E0E923BB78D3001EC2CE /* DetailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527E0E823BB78D3001EC2CE /* DetailedViewModel.swift */; };
+		3527E0EB23BB819B001EC2CE /* DetailedScreenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527E0EA23BB819B001EC2CE /* DetailedScreenDataModel.swift */; };
 		3531B1DD23B4B5B700495AE8 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531B1DC23B4B5B700495AE8 /* RequestHandler.swift */; };
 		3531B1E023B4B62900495AE8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531B1DF23B4B62900495AE8 /* DataSource.swift */; };
 		3534850323B2520A009B28A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3534850223B2520A009B28A8 /* AppDelegate.swift */; };
@@ -28,6 +31,9 @@
 		3526A04C23B8985C00FF446E /* MainScreenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDataModel.swift; sourceTree = "<group>"; };
 		35278D2423B3548200B07013 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		35278D2823B355F200B07013 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3527E0E623BB5D60001EC2CE /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		3527E0E823BB78D3001EC2CE /* DetailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewModel.swift; sourceTree = "<group>"; };
+		3527E0EA23BB819B001EC2CE /* DetailedScreenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScreenDataModel.swift; sourceTree = "<group>"; };
 		3531B1DC23B4B5B700495AE8 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		3531B1DF23B4B62900495AE8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		353484FF23B2520A009B28A8 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +80,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		3527E0E523BB5D19001EC2CE /* DetailedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3527E0E623BB5D60001EC2CE /* DetailedViewController.swift */,
+				3527E0E823BB78D3001EC2CE /* DetailedViewModel.swift */,
+				3527E0EA23BB819B001EC2CE /* DetailedScreenDataModel.swift */,
+			);
+			path = DetailedScreen;
+			sourceTree = "<group>";
+		};
 		3531B1DE23B4B61200495AE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				35580E9623B4EB7700B2BA54 /* MainScreen */,
+				3527E0E523BB5D19001EC2CE /* DetailedScreen */,
 				3531B1DE23B4B61200495AE8 /* Model */,
 				35278D2A23B3565C00B07013 /* Networking */,
 				35278D2623B355CA00B07013 /* extensions */,
@@ -144,7 +161,6 @@
 				7455194C213D7C2C616E3216 /* Pods-Marvel.debug.xcconfig */,
 				88A04EC02B3F12E8AFCB2545 /* Pods-Marvel.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -267,10 +283,13 @@
 				3526A04D23B8985C00FF446E /* MainScreenDataModel.swift in Sources */,
 				35278D2923B355F200B07013 /* Constants.swift in Sources */,
 				3531B1E023B4B62900495AE8 /* DataSource.swift in Sources */,
+				3527E0E723BB5D60001EC2CE /* DetailedViewController.swift in Sources */,
 				35580E9B23B4ECF500B2BA54 /* MainTableViewCell.swift in Sources */,
 				3531B1DD23B4B5B700495AE8 /* RequestHandler.swift in Sources */,
+				3527E0E923BB78D3001EC2CE /* DetailedViewModel.swift in Sources */,
 				3534850323B2520A009B28A8 /* AppDelegate.swift in Sources */,
 				35580E9E23B4FC0300B2BA54 /* MainScreenViewModel.swift in Sources */,
+				3527E0EB23BB819B001EC2CE /* DetailedScreenDataModel.swift in Sources */,
 				35580E9823B4EB9A00B2BA54 /* MainScreenViewController.swift in Sources */,
 				3534850523B2520A009B28A8 /* SceneDelegate.swift in Sources */,
 				35278D2523B3548200B07013 /* String.swift in Sources */,

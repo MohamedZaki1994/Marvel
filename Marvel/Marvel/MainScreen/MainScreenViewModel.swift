@@ -28,7 +28,6 @@ class MainScreenViewModel {
                                                 thumbnail: result.thumbnail))
                 })
                 self.dataModel.character?.append(contentsOf: characters)
-//                self.dataModel = MainScreenDataModel(character: characters)
                 completion?(self.dataModel)
             }
         }

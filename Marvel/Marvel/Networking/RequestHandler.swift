@@ -10,8 +10,8 @@ import Foundation
 
 class RequestHandler {
 
-    class func request(offset: Int, completion:((DataSource?, Error?) -> Void)?) {
-        var urlComponent = URLComponents(string: Constants.baseURL + Constants.endPoint)
+    class func request(offset: Int, path: String = "" , completion:((DataSource?, Error?) -> Void)?) {
+        var urlComponent = URLComponents(string: Constants.baseURL + Constants.charactersEndPoint + path)
         urlComponent?.queryItems = query(offset: offset, limit: 5)
         guard let url = urlComponent?.url else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -22,7 +22,7 @@ class RequestHandler {
             var user: DataSource?
                 if let data = data {
                     do {
-                    user = try JSONDecoder().decode(DataSource.self, from: data)
+                        user = try JSONDecoder().decode(DataSource.self, from: data)
                         completion?(user,nil)
                     }
                     catch {

@@ -62,11 +62,21 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return mainCell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailedViewController") as? DetailedViewController
+        detailedVC?.id = viewModel.dataModel.character?[indexPath.row].id
+        guard let detailedViewcontroller = detailedVC else { return }
+        navigationController?.pushViewController(detailedViewcontroller, animated: true)
+    }
 }
 
 extension MainScreenViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if tableView.contentOffset.y + tableView.frame.height >= tableView.contentSize.height  + 34{
+        if tableView.contentOffset.y + tableView.frame.height >= tableView.contentSize.height {
+            if viewModel.dataModel.character?.count == 50 {
+                return
+            }
             if !isLoading {
                 showActivityIndicator()
                 viewModel.fetchData { [weak self] (dataModel) in
