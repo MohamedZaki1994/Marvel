@@ -13,6 +13,8 @@ class DetailedViewController: UIViewController {
     var id: Int?
     var viewModel = DetailedViewModel()
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -26,8 +28,10 @@ class DetailedViewController: UIViewController {
                 let ext = dataModel.thumbnail?.thumbnailExtension.rawValue {
                 self?.imageView.kf.setImage(with: URL(string: path + "." + ext))
             }
-
-            print("Done")
+            DispatchQueue.main.async { [weak self] in 
+                self?.nameLabel.text = dataModel.name
+                self?.descriptionLabel.text =  (dataModel.description?.isEmpty ?? true ) ? "no description" : dataModel.description
+            }
         }
     }
 }
