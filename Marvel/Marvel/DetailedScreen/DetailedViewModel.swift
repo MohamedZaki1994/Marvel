@@ -7,12 +7,23 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class DetailedViewModel {
 
-    var data: DetailedScreenDataModel?
+    var closureBinding: ((DetailedScreenDataModel?) -> Void)?
+    var data: DetailedScreenDataModel? {
+        didSet {
+            closureBinding?(self.data)
+        }
+    }
+    var vari = BehaviorRelay(value: DetailedScreenDataModel())
+    var rxTest: Observable<DetailedScreenDataModel> {
+        return vari.asObservable()
+    }
 
-    func fetchData(id: Int, completion: ((DetailedScreenDataModel) -> Void)?) {
+    func fetchData(id: Int) {
         RequestHandler.request(offset: 0, path: "/" + String(id)) { [weak self] (dataSource, error) in
             if error != nil {
                 return
@@ -27,8 +38,13 @@ class DetailedViewModel {
                                                  stories: result.stories,
                                                  events: result.events)
 
-            guard let data = self?.data else {return}
-            completion?(data)
+            self?.testRX()
+        }
+    }
+
+    func testRX() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.vari.accept(self.data!)
         }
     }
 }
