@@ -15,6 +15,7 @@ class DetailedViewController: UIViewController {
     var viewModel = DetailedViewModel()
     var imageView = UIImageView()
     let disposeBag = DisposeBag()
+    @IBOutlet weak var backkButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -26,9 +27,10 @@ class DetailedViewController: UIViewController {
         tableView.register(UINib(nibName: "DetailedCollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailedCollectionTableViewCell")
         tableView.register(UINib(nibName: "RelatedLinksTableViewCell", bundle: nil), forCellReuseIdentifier: "RelatedLinksTableViewCell")
 
-        let headerNib = UINib(nibName: "DetailedScreenHeader", bundle: nil)
-        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "DetailedScreenHeader")
-
+        tableView.contentInset = UIEdgeInsets(top: 400, left: 0, bottom: 0, right: 0)
+        view.addSubview(imageView)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
+        view.bringSubviewToFront(backkButton)
         viewModel.fetchData(id: id)
         //
         viewModel.rxTest.subscribe(onNext: { (value) in
@@ -40,6 +42,9 @@ class DetailedViewController: UIViewController {
             if let path = dataModel?.thumbnail?.path,
                 let ext = dataModel?.thumbnail?.thumbnailExtension.rawValue {
                 self?.imageView.kf.setImage(with: URL(string: path + "." + ext))
+            }
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
             }
         }
     }
@@ -73,14 +78,17 @@ extension DetailedViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "DetailedScreenHeader") as? DetailedScreenHeader
-        headerView?.imageView = imageView
-        return headerView
-    }
+}
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 400
+extension DetailedViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = -(scrollView.contentOffset.y)
+        if scrollView.contentOffset.y < -400 {
+            imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: offsetY)
+        } else if scrollView.contentOffset.y < 0 {
+            imageView.frame = CGRect(x: 0, y: offsetY - 400, width: UIScreen.main.bounds.size.width, height: 400)
+        } else {
+            imageView.frame = CGRect(x: 0, y: -400, width: UIScreen.main.bounds.size.width, height: 400)
+        }
     }
-
 }
