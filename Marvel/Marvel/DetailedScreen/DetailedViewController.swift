@@ -15,6 +15,7 @@ class DetailedViewController: UIViewController {
     var viewModel = DetailedViewModel()
     var imageView = UIImageView()
     let disposeBag = DisposeBag()
+    let offset: CGFloat = 400
     @IBOutlet weak var backkButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func backButton(_ sender: Any) {
@@ -27,9 +28,9 @@ class DetailedViewController: UIViewController {
         tableView.register(UINib(nibName: "DetailedCollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailedCollectionTableViewCell")
         tableView.register(UINib(nibName: "RelatedLinksTableViewCell", bundle: nil), forCellReuseIdentifier: "RelatedLinksTableViewCell")
 
-        tableView.contentInset = UIEdgeInsets(top: 400, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: offset - 44, left: 0, bottom: 0, right: 0)
         view.addSubview(imageView)
-        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: offset)
         view.bringSubviewToFront(backkButton)
         viewModel.fetchData(id: id)
         //
@@ -83,12 +84,12 @@ extension DetailedViewController: UITableViewDataSource, UITableViewDelegate {
 extension DetailedViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = -(scrollView.contentOffset.y)
-        if scrollView.contentOffset.y < -400 {
-            imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: offsetY)
+        if scrollView.contentOffset.y < -offset + 44 {
+            imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: offsetY + 44)
         } else if scrollView.contentOffset.y < 0 {
-            imageView.frame = CGRect(x: 0, y: offsetY - 400, width: UIScreen.main.bounds.size.width, height: 400)
+            imageView.frame = CGRect(x: 0, y: offsetY - offset + 44, width: UIScreen.main.bounds.size.width, height: offset)
         } else {
-            imageView.frame = CGRect(x: 0, y: -400, width: UIScreen.main.bounds.size.width, height: 400)
+            imageView.frame = CGRect(x: 0, y: -offset, width: UIScreen.main.bounds.size.width, height: offset)
         }
     }
 }
