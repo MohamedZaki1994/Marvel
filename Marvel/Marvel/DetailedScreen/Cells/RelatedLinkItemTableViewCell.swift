@@ -1,22 +1,18 @@
 //
-//  DetailedCollectionTableViewCell.swift
+//  RelatedLinkItemTableViewCell.swift
 //  Marvel
 //
-//  Created by Mohamed Mahmoud Zaki on 1/12/20.
+//  Created by Mohamed Mahmoud Zaki on 2/27/20.
 //  Copyright © 2020 Mohamed Mahmoud Zaki. All rights reserved.
 //
 
 import UIKit
 
-class DetailedCollectionTableViewCell: UITableViewCell {
+class RelatedLinkItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
-
-    @IBOutlet weak var tableView: UITableView!
     override func awakeFromNib() {
         super.awakeFromNib()
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

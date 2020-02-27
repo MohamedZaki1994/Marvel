@@ -57,12 +57,23 @@ extension DetailedViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        viewModel.setupCells(row: indexPath.row)
         switch indexPath.row {
-        case 0,1:
+        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailedTableViewCell", for: indexPath)
             guard let detailedCell = cell as? DetailedTableViewCell else {
                 return cell
             }
+            detailedCell.title.text = "NAME"
+            detailedCell.descriptionLabel.text = viewModel.data?.name
+            return detailedCell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailedTableViewCell", for: indexPath)
+            guard let detailedCell = cell as? DetailedTableViewCell else {
+                return cell
+            }
+            detailedCell.title.text = "DESCRIPTION"
+            detailedCell.descriptionLabel.text = viewModel.data?.description?.isEmpty ?? true ? "No description": viewModel.data?.description
             return detailedCell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RelatedLinksTableViewCell", for: indexPath)
