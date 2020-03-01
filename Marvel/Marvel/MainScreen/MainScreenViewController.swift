@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import UserNotifications
 
 class MainScreenViewController: UIViewController {
 
@@ -17,15 +18,35 @@ class MainScreenViewController: UIViewController {
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchData { [weak self] (dataModel) in
-            guard dataModel != nil else { return }
+        viewModel.fetchData()
+        viewModel.loadedData = { [weak self] dataModel in
             DispatchQueue.main.async { [weak self] in
+                self?.isLoading = false
                 self?.tableView.reloadData()
+                self?.hideActivityIndicator()
             }
         }
         navigationController?.navigationBar.isHidden = true
         let nib = UINib(nibName: "MainTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "MainTableViewCell")
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
+            (granted, error) in
+            if granted {
+                print("yes")
+            } else {
+                print("No")
+            }
+        }
+
+            let content = UNMutableNotificationContent()
+            content.title = "Notification Tutorial"
+            content.subtitle = "from ioscreator.com"
+            content.body = " Notification triggered"
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
+
+            // 4
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
     func showActivityIndicator() {
@@ -79,14 +100,7 @@ extension MainScreenViewController: UIScrollViewDelegate {
             }
             if !isLoading {
                 showActivityIndicator()
-                viewModel.fetchData { [weak self] (dataModel) in
-                    guard dataModel != nil else { return }
-                    DispatchQueue.main.async { [weak self] in
-                        self?.tableView.reloadData()
-                        self?.isLoading = false
-                        self?.hideActivityIndicator()
-                    }
-                }
+                viewModel.fetchData()
                 isLoading = true
             }
         }
