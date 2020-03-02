@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn-nav-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="seL-8X-Wn2">
-                                        <rect key="frame" x="132" y="62" width="150" height="28"/>
+                                        <rect key="frame" x="132" y="34" width="150" height="56"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="U87-PH-iwf"/>
@@ -88,6 +88,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i1o-gR-msg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QqF-8M-jCY" id="K3J-zq-KO8"/>
                                     <outlet property="delegate" destination="QqF-8M-jCY" id="f3N-7M-dNg"/>
@@ -105,7 +106,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yzC-bF-iZw" firstAttribute="top" secondItem="IrT-ph-GNJ" secondAttribute="top" constant="20" id="5PF-WB-nSm"/>
                             <constraint firstItem="i1o-gR-msg" firstAttribute="leading" secondItem="IrT-ph-GNJ" secondAttribute="leading" id="IQN-4G-tkj"/>

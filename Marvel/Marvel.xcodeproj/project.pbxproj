@@ -28,6 +28,8 @@
 		3534850A23B2520A009B28A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3534850823B2520A009B28A8 /* Main.storyboard */; };
 		3534850C23B2520B009B28A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3534850B23B2520B009B28A8 /* Assets.xcassets */; };
 		3534850F23B2520B009B28A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3534850D23B2520B009B28A8 /* LaunchScreen.storyboard */; };
+		3539D1B7240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3539D1B5240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.swift */; };
+		3539D1B8240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3539D1B6240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.xib */; };
 		35580E9823B4EB9A00B2BA54 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35580E9723B4EB9A00B2BA54 /* MainScreenViewController.swift */; };
 		35580E9B23B4ECF500B2BA54 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35580E9923B4ECF500B2BA54 /* MainTableViewCell.swift */; };
 		35580E9C23B4ECF500B2BA54 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35580E9A23B4ECF500B2BA54 /* MainTableViewCell.xib */; };
@@ -59,6 +61,8 @@
 		3534850B23B2520B009B28A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3534850E23B2520B009B28A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3534851023B2520B009B28A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3539D1B5240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCollectionItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		3539D1B6240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedCollectionItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		35580E9723B4EB9A00B2BA54 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		35580E9923B4ECF500B2BA54 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		35580E9A23B4ECF500B2BA54 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				352A469123CB5854004C89B2 /* RelatedLinksTableViewCell.xib */,
 				3531B5282407D4F0002271DF /* RelatedLinkItemTableViewCell.swift */,
 				3531B5292407D4F0002271DF /* RelatedLinkItemTableViewCell.xib */,
+				3539D1B5240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.swift */,
+				3539D1B6240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 				3534850C23B2520B009B28A8 /* Assets.xcassets in Resources */,
 				3531B52B2407D4F0002271DF /* RelatedLinkItemTableViewCell.xib in Resources */,
 				35580E9C23B4ECF500B2BA54 /* MainTableViewCell.xib in Resources */,
+				3539D1B8240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.xib in Resources */,
 				3534850A23B2520A009B28A8 /* Main.storyboard in Resources */,
 				352A468A23CB3FB1004C89B2 /* DetailedTableViewCell.xib in Resources */,
 			);
@@ -333,6 +340,7 @@
 				3534850523B2520A009B28A8 /* SceneDelegate.swift in Sources */,
 				35278D2523B3548200B07013 /* String.swift in Sources */,
 				352A469223CB5854004C89B2 /* RelatedLinksTableViewCell.swift in Sources */,
+				3539D1B7240D214100FFB25B /* DetailedCollectionItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

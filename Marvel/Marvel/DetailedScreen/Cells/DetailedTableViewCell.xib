@@ -28,10 +28,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7K-nZ-0TP">
                         <rect key="frame" x="20" y="41" width="42" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="j7K-nZ-0TP" secondAttribute="bottom" id="8vc-dl-2yi"/>
                     <constraint firstItem="j7K-nZ-0TP" firstAttribute="leading" secondItem="H3E-Qz-esH" secondAttribute="leading" id="X1Y-bO-9gX"/>
@@ -40,6 +41,7 @@
                     <constraint firstItem="H3E-Qz-esH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wTw-tG-3nz"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="j7K-nZ-0TP" id="rEZ-Mh-gcI"/>

@@ -18,9 +18,25 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-Kc-KTs">
                         <rect key="frame" x="0.0" y="0.0" width="363" height="131"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1uX-03-N7v">
+                                <rect key="frame" x="0.0" y="0.0" width="363" height="131"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DYb-z0-X0j">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1uX-03-N7v" firstAttribute="leading" secondItem="bZT-Kc-KTs" secondAttribute="leading" id="BEo-gH-eql"/>
                             <constraint firstAttribute="height" constant="131" id="QLw-Ox-UVa"/>
+                            <constraint firstItem="1uX-03-N7v" firstAttribute="top" secondItem="bZT-Kc-KTs" secondAttribute="top" id="TlA-Zt-ZYW"/>
+                            <constraint firstAttribute="bottom" secondItem="1uX-03-N7v" secondAttribute="bottom" id="evZ-W2-kAH"/>
+                            <constraint firstAttribute="trailing" secondItem="1uX-03-N7v" secondAttribute="trailing" id="zdc-hQ-V7B"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -32,6 +48,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="1uX-03-N7v" id="y0g-wK-W9X"/>
+            </connections>
             <point key="canvasLocation" x="168.84057971014494" y="131.58482142857142"/>
         </tableViewCell>
     </objects>

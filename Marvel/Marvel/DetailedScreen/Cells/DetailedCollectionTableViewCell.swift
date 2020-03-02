@@ -12,17 +12,33 @@ class DetailedCollectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-//        tableView.delegate = self
-//        tableView.dataSource = self
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: frame.width / 3 , height: frame.height)
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+        let nib = UINib(nibName: "DetailedCollectionItemCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "DetailedCollectionItemCollectionViewCell")
     }
     
+}
+extension DetailedCollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailedCollectionItemCollectionViewCell", for: indexPath)
+        guard let cellItem = cell as? DetailedCollectionItemCollectionViewCell else {
+            return cell
+        }
+        return cellItem
+    }
+
+
 }
